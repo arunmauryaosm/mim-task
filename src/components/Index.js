@@ -73,7 +73,7 @@ const Index = () => {
 
                         <div className="text-center text-white w-full ">
 
-                            <h1 className="font-bold py-5 text-3xl"> Welcome to MiM-Essay </h1>
+                            <h1 className="font-bold py-5 text-3xl"> Welcome </h1>
                             <p className="pb-2  ">Task has been completed succesfully, If you feel that task is not up to mark feel free to contact me. <span className=" text-xl font-medium "> <br />
                                 I'll make changes on it
                             </span>  </p>
@@ -95,15 +95,17 @@ const Index = () => {
                                     <spam className="bg-emerald-50 text-emerald-800 text-2xl mb-3 w-fit mx-auto p-4 rounded-full">
                                         <CgKeyhole />
                                     </spam>
-
-                                    <OTPInput value={otp} onChange={setOtp} autoFocus OTPLength={6} otpType="number" disabled={false} />
-                                    <ResendOTP className="hover:text-yellow-50 cursor-pointer" onResendClick={() => console.log("Resend clicked")} />
+                                    <form>
+                                      
+                                    <OTPInput input value={otp} onChange={setOtp} autocomplete={otp} autoFocus OTPLength={6} otpType="number" disabled={false} />
+                                    <ResendOTP className="hover:text-yellow-50 cursor-pointer" onResendClick={(onSignup)} />
                                     <button onClick={onOTPVerify} className="bg-[#082531] w-full flex gap-1 items-center justify-center p-3 text-white rounded font-bold  hover:bg-white hover:text-[#082531] hover:ease-in-out duration-500">
                                         {loading && (
                                             <CgSpinner size={20} className=" animate-spin" />
-                                        )}
+                                            )}
                                         <spam >Verify Phone Number</spam>
                                     </button>
+                                            </form>
                                 </>
 
 
@@ -114,8 +116,7 @@ const Index = () => {
 
                                     <>
                                         <spam className="text-center font-bold leading-normal text-white  text-3xl mb-6">
-                                            <h1>Welcome to</h1>
-                                            <h2>MiM-Essay</h2>
+                                            <h1>Welcome</h1>
                                         </spam>
 
                                         <spam className="bg-emerald-50 text-emerald-800 text-3xl w-fit mx-auto p-4 rounded-full">
@@ -129,6 +130,7 @@ const Index = () => {
                                             country={"in"}
                                             value={ph}
                                             onChange={setPh}
+                                            
                                         />
                                         <div id="recaptcha-container" />
 
